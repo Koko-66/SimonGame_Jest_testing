@@ -1,0 +1,22 @@
+{
+  "name": "simongame_jest_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Koko-66/SimonGame_Jest_testing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Koko-66/SimonGame_Jest_testing/issues"
+  },
+  "homepage": "https://github.com/Koko-66/SimonGame_Jest_testing#readme",
+  "devDependencies": {
+    "jest": "^27.2.4"
+  }
+}
