@@ -2,10 +2,8 @@
  * @jest-environment jsdom
  */
 
-const { expect } = require("@jest/globals");
-const { test, beforeAll } = require("jest-circus");
-const { describe } = require("yargs");
-const { game, newGame } = require("../game");
+const { domainToUnicode } = require("url");
+const { game, newGame, showScore } = require("../game");
 
 beforeAll(() => {
     let fs = require("fs");
@@ -33,12 +31,28 @@ describe("game object contains correct keys", () => {
     }); 
 })
 
-describe("newGame function works correctly, "), () => {
+describe("newGame function works correctly", () => {
     beforeAll(() => { //sets some fake values to test if the function works properly and resets them
         game.score = 42;
+        game.playerMoves = ['button1', 'button2'];
+        game.currentGame = ['button1', 'button2'];
+        document.getElementById("score").innerText = "42";
         newGame();
     });
-    test("should set the score to 0"), () => {
+    test("should set the score to 0", () => {
         expect(game.score).toEqual(0);
-    }
-}
+    });
+    test("should clear playerMoves array", () => {
+        expect(game.playerMoves.length).toBe(0);
+    });
+    test("should clear currentGame array", () => {
+        expect(game.currentGame.length).toBe(0);
+    });
+    test("should set displayed score to 0", () => {
+        expect(document.getElementById("score").innerText).toEqual(0);
+    });
+})
+
+describe("Add turn function works correctly", () =>{
+    test()
+})
